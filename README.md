@@ -1,24 +1,7 @@
-# README
+`This is a boilerplate created in order to help you get started with a basic setup of a Ruby on Rails with dependencies already set up.`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to use?
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. `Use this template` and create a new repository.
+2. Make sure you have `docker` and `docker-compose` already installed.
+3. Execute `./bin/setup`.
