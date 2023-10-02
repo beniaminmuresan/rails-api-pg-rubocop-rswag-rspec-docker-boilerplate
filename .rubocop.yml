@@ -1,0 +1,9 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/bundle
+Style/Documentation:
+  Exclude:
+    - app/mailers/application_mailer.rb
+    - app/models/application_record.rb
+    - config/application.rb

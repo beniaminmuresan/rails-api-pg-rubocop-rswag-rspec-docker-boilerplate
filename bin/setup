@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'fileutils'
+
+# path to your application root.
+APP_ROOT = File.expand_path('..', __dir__)
+
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
+
+FileUtils.chdir APP_ROOT do
+  puts '== Build stage =='
+  system! 'docker-compose build'
+
+  puts '== Create .env file =='
+  system! 'cp .env_example .env'
+
+  puts '== Setup db =='
+  system! 'docker-compose run --rm api rails db:setup'
+
+  puts '== Starting server =='
+  system! 'docker-compose run --rm --service-ports api'
+end
